@@ -24,7 +24,11 @@ import sys
 # Input: None
 # Output: function returns a 2-D list that is the grid of letters and
 #         1-D list of words to search
-def read_input ( ):
+def read_input ():
+    '''This is a function for reading in the input file
+    this function has no parameters. However its input is from the Standard Input and the output
+    is the wordgrid and the list of words
+    '''
     num_of_lines = sys.stdin.readline().strip()
     num_of_lines = int(num_of_lines)
     word_grid =[]
@@ -52,50 +56,46 @@ def read_input ( ):
 
 # Creating Lists of letters for which to search the words in the word list
 def horizontal_list_forwards_backwards(word_grid):
-    horizontal_forwards=[]
+    '''Input is the wordgrid 
+       Output is horizontal list of letters that runs forwards and backwards
+    '''
     length_of_grid = len(word_grid)
+
+    # Creating Left to Right(forward) Horizontal list of letters
+    horizontal_forwards=[]
     for i in range(length_of_grid):
       string=''
       for j in range(length_of_grid):
-        #print(f'{i},{j}  ')
-        #print(f'{word_grid[i][j]}',end='')
         string=string+word_grid[i][j]
-        #horizontal_forwards.append(word_grid[i][j])
-      #print()
+
       horizontal_forwards.append(string)
-    #print(horizontal_forwards)
-    # Listing the list of words backwards
+
+    # Creating Right to Left(Backwards) Horizontal list of letters
     horizontal_backwards=[]
     for horizontal in horizontal_forwards:
       string=horizontal[::-1]
       horizontal_backwards.append(string)
-    #print(horizontal_backwards)
-    #horizontal_list=horizontal_forwards+horizontal_backwards
-    #print(horizontal_list)
+
     return horizontal_forwards , horizontal_backwards
 
 
 def vertical_list_forwards_backwards(word_grid):
-    vertical_forwards=[]
     length_of_grid = len(word_grid)
+
+    # Creating Top to Bottom(Forwards) Vertical list of letters
+    vertical_forwards=[]
     for i in range(length_of_grid):
       string=''
       for j in range(length_of_grid):
-        #print(f'{i},{j}  ')
-        #print(f'{word_grid[i][j]}',end='')
         string=string+word_grid[j][i]
-        #horizontal_forwards.append(word_grid[i][j])
-      #print()
       vertical_forwards.append(string)
-    #print(horizontal_forwards)
-    # Listing the list of words backwards
+      
+    # Creating Bottom to Top(Backwards) Vertical list of letters
     vertical_backwards=[]
     for vertical in vertical_forwards:
       string=vertical[::-1]
       vertical_backwards.append(string)
-    #print(horizontal_backwards)
-    #horizontal_list=vertical_forwards+horizontal_backwards
-    #print(horizontal_list)
+
     return vertical_forwards, vertical_backwards
 
 
