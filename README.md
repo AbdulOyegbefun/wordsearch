@@ -4,10 +4,10 @@ Given an n by n grid of letters, and a list of words, this program finds the loc
 ## This project is run on the command line:
 
 On Mac or Linux:
-- python3 .py < dna.in
+- python3 WordSearch.py < dna.in
 
 On Windows:
-- python DNA.py < dna.in
+- python WordSearch.py < dna.in
 
 ## Input: 
 The input will be in a file word_grid.in and will be read from stdin. Other files can be used as input but must be in the form of word_grid.in. The format of the input file is as follows:
